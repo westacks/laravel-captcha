@@ -32,17 +32,17 @@ class CaptchaServiceProvider extends ServiceProvider
             if (strpos($this->app->version(), 'Lumen') !== false) {
                 /* @var Router $router */
                 $router = $this->app;
-                $router->get('captcha[/api/{config}]', 'WeStacks\LaravelCaptcha\LumenCaptchaController@getCaptchaApi');
-                $router->get('captcha[/{config}]', 'WeStacks\LaravelCaptcha\LumenCaptchaController@getCaptcha');
+                $router->get('captcha[/api/{config}]', 'WeStacks\LaravelCaptcha\LumenCaptchaController@getCaptchaApi')->name('captcha.api');
+                $router->get('captcha[/{config}]', 'WeStacks\LaravelCaptcha\LumenCaptchaController@getCaptcha')->name('captcha');
             } else {
                 /* @var Router $router */
                 $router = $this->app['router'];
                 if ((double)$this->app->version() >= 5.2) {
-                    $router->get('captcha/api/{config?}', '\WeStacks\LaravelCaptcha\CaptchaController@getCaptchaApi')->middleware('web');
-                    $router->get('captcha/{config?}', '\WeStacks\LaravelCaptcha\CaptchaController@getCaptcha')->middleware('web');
+                    $router->get('captcha/api/{config?}', '\WeStacks\LaravelCaptcha\CaptchaController@getCaptchaApi')->middleware('web')->name('captcha.api');
+                    $router->get('captcha/{config?}', '\WeStacks\LaravelCaptcha\CaptchaController@getCaptcha')->middleware('web')->name('captcha');
                 } else {
-                    $router->get('captcha/api/{config?}', '\WeStacks\LaravelCaptcha\CaptchaController@getCaptchaApi');
-                    $router->get('captcha/{config?}', '\WeStacks\LaravelCaptcha\CaptchaController@getCaptcha');
+                    $router->get('captcha/api/{config?}', '\WeStacks\LaravelCaptcha\CaptchaController@getCaptchaApi')->name('captcha.api');
+                    $router->get('captcha/{config?}', '\WeStacks\LaravelCaptcha\CaptchaController@getCaptcha')->name('captcha');
                 }
             }
         }
