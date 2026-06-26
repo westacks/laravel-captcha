@@ -71,21 +71,21 @@ Find the `providers` key in `config/app.php` and register the Captcha Service Pr
 ```php
     'providers' => [
         // ...
-        'Mews\Captcha\CaptchaServiceProvider',
+        'WeStacks\LaravelCaptcha\CaptchaServiceProvider',
     ]
 ```
 for Laravel 5.1+
 ```php
     'providers' => [
         // ...
-        Mews\Captcha\CaptchaServiceProvider::class,
+        WeStacks\LaravelCaptcha\CaptchaServiceProvider::class,
     ]
 ```
 For Laravel 11+ you can add the provider to `bootstrap\providers.php`.
 ```php
 return [
     // ...
-    Mews\Captcha\CaptchaServiceProvider::class
+    WeStacks\LaravelCaptcha\CaptchaServiceProvider::class
 ];
 ```
 
@@ -94,14 +94,14 @@ Find the `aliases` key in `config/app.php`.
 ```php
     'aliases' => [
         // ...
-        'Captcha' => 'Mews\Captcha\Facades\Captcha',
+        'Captcha' => 'WeStacks\LaravelCaptcha\Facades\Captcha',
     ]
 ```
 for Laravel 5.1+
 ```php
     'aliases' => [
         // ...
-        'Captcha' => Mews\Captcha\Facades\Captcha::class,
+        'Captcha' => WeStacks\LaravelCaptcha\Facades\Captcha::class,
     ]
 ```
 
@@ -112,7 +112,7 @@ For Laravel 11+ : you do not need to add the alias, it will be added automatical
 ### Custom settings:
 To use your own settings, publish config.
 
-```$ php artisan vendor:publish --provider="Mews\Captcha\CaptchaServiceProvider"```
+```$ php artisan vendor:publish --provider="WeStacks\LaravelCaptcha\CaptchaServiceProvider"```
 
 `config/captcha.php`
 

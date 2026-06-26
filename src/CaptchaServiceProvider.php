@@ -1,6 +1,6 @@
 <?php
 
-namespace Mews\Captcha;
+namespace WeStacks\LaravelCaptcha;
 
 use Illuminate\Routing\Router;
 use Illuminate\Validation\Factory;
@@ -11,7 +11,7 @@ use Intervention\Image\Drivers\Imagick\Driver as ImagickDriver;
 
 /**
  * Class CaptchaServiceProvider
- * @package Mews\Captcha
+ * @package WeStacks\LaravelCaptcha
  */
 class CaptchaServiceProvider extends ServiceProvider
 {
@@ -32,17 +32,17 @@ class CaptchaServiceProvider extends ServiceProvider
             if (strpos($this->app->version(), 'Lumen') !== false) {
                 /* @var Router $router */
                 $router = $this->app;
-                $router->get('captcha[/api/{config}]', 'Mews\Captcha\LumenCaptchaController@getCaptchaApi');
-                $router->get('captcha[/{config}]', 'Mews\Captcha\LumenCaptchaController@getCaptcha');
+                $router->get('captcha[/api/{config}]', 'WeStacks\LaravelCaptcha\LumenCaptchaController@getCaptchaApi');
+                $router->get('captcha[/{config}]', 'WeStacks\LaravelCaptcha\LumenCaptchaController@getCaptcha');
             } else {
                 /* @var Router $router */
                 $router = $this->app['router'];
                 if ((double)$this->app->version() >= 5.2) {
-                    $router->get('captcha/api/{config?}', '\Mews\Captcha\CaptchaController@getCaptchaApi')->middleware('web');
-                    $router->get('captcha/{config?}', '\Mews\Captcha\CaptchaController@getCaptcha')->middleware('web');
+                    $router->get('captcha/api/{config?}', '\WeStacks\LaravelCaptcha\CaptchaController@getCaptchaApi')->middleware('web');
+                    $router->get('captcha/{config?}', '\WeStacks\LaravelCaptcha\CaptchaController@getCaptcha')->middleware('web');
                 } else {
-                    $router->get('captcha/api/{config?}', '\Mews\Captcha\CaptchaController@getCaptchaApi');
-                    $router->get('captcha/{config?}', '\Mews\Captcha\CaptchaController@getCaptcha');
+                    $router->get('captcha/api/{config?}', '\WeStacks\LaravelCaptcha\CaptchaController@getCaptchaApi');
+                    $router->get('captcha/{config?}', '\WeStacks\LaravelCaptcha\CaptchaController@getCaptcha');
                 }
             }
         }

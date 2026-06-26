@@ -1,11 +1,11 @@
 <?php
 
-namespace Mews\Captcha\Facades;
+namespace WeStacks\LaravelCaptcha\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Mews\Captcha\Captcha
+ * @see \WeStacks\LaravelCaptcha\Captcha
  */
 class Captcha extends Facade
 {

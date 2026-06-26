@@ -35,7 +35,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Mews\\Captcha\\": "src/"
+            "WeStacks\\LaravelCaptcha\\": "src/"
         },
         "files": [
             "src/helpers.php"
@@ -53,10 +53,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Mews\\Captcha\\CaptchaServiceProvider"
+                "WeStacks\\LaravelCaptcha\\CaptchaServiceProvider"
             ],
             "aliases": {
-                "Captcha": "Mews\\Captcha\\Facades\\Captcha"
+                "Captcha": "WeStacks\\LaravelCaptcha\\Facades\\Captcha"
             }
         }
     }

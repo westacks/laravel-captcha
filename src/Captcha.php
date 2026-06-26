@@ -1,6 +1,6 @@
 <?php
 
-namespace Mews\Captcha;
+namespace WeStacks\LaravelCaptcha;
 
 /**
  * Laravel 5 & 6 Captcha package
@@ -35,7 +35,7 @@ use Intervention\Image\ImageManager;
 
 /**
  * Class Captcha
- * @package Mews\Captcha
+ * @package WeStacks\LaravelCaptcha
  */
 class Captcha
 {

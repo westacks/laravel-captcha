@@ -1,13 +1,13 @@
 <?php
 
-namespace Mews\Captcha;
+namespace WeStacks\LaravelCaptcha;
 
 use Exception;
 use Laravel\Lumen\Routing\Controller;
 
 /**
  * Class CaptchaController
- * @package Mews\Captcha
+ * @package WeStacks\LaravelCaptcha
  */
 class LumenCaptchaController extends Controller
 {

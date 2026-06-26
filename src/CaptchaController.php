@@ -1,13 +1,13 @@
 <?php
 
-namespace Mews\Captcha;
+namespace WeStacks\LaravelCaptcha;
 
 use Exception;
 use Illuminate\Routing\Controller;
 
 /**
  * Class CaptchaController
- * @package Mews\Captcha
+ * @package WeStacks\LaravelCaptcha
  */
 class CaptchaController extends Controller
 {
